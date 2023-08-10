@@ -115,7 +115,7 @@ body {
     display: flex;
     flex-direction: column-reverse;
     width: 375px;
-    min-height: 784px;
+    min-height: 775px;
     border-radius: 10px;
   }
 
@@ -142,16 +142,17 @@ body {
   }
 
   .table-content {
-    width: 100%;
+    display: flex;
     border-collapse: collapse;
     margin-top: 20px;
+    flex-direction: column;
   }
 
   .left,
   .middle,
   .right {
-    text-align: center;
-    display: block; /* Altera os elementos de tabela para se comportarem como blocos */
+    width: 100%;
+    text-align: center; 
     width: 100%; /* Ocupa toda a largura da coluna */
     box-sizing: border-box; /* Inclui padding e borda na largura */
   }
