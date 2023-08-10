@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --main-bg: hsl(233, 47%, 7%);
+  --card-bg: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --heading: hsl(0, 0%, 100%);
+  --paragraph: hsla(0, 0%, 100%, 0.75);
+  --stat-heading: hsla(0, 0%, 100%, 0.6);
+}
+
+h1 {
+  color: var(--heading);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 24px;
+}
+
+span {
+  color: var(--accent);
+}
+
+p {
+  color: var(--paragraph);
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.table-content {
+  text-align: left;
+  width: 100%;
+}
+
+.table-content h2 {
+  color: var(--heading);
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+}
+.table-content p {
+  color: var(--paragraph);
+  font-family: "Lexend Deca", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: var(--main-bg);
+}
+
+.container {
+  width: 1020px;
+  height: 450px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 50%;
+
+  left: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.table-content {
+  margin-top: 100px;
+}
+
+.rightside img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 10px 10px 0;
+}
+
+.leftside {
+  width: 50%;
+  height: 100%;
+  padding: 70px;
+}
+.rightside {
+  position: relative;
+  width: 50%;
+  background-image: url(/images/image-header-desktop.jpg);
+  background-size: cover;
+  background-color: var(--accent);
+  z-index: 2;
+}
+
+.rightside::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #490185;
+  opacity: 0.5;
+  z-index: 1; /* Coloca a pseudo-classe acima da imagem */
+  pointer-events: none; /* Permite interagir com os elementos subjacentes */
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 375px;
+    min-height: 784px;
+    border-radius: 10px;
+  }
+
+  p {
+    padding: 0 17px;
+  }
+
+  .leftside {
+    height: 75%;
+    width: 100%;
+    text-align: center;
+    padding: 35px;
+    display: block;
+  }
+
+  .rightside {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    background-image: url(/images/image-header-desktop.jpg);
+    background-size: cover;
+    background-color: var(--accent);
+    z-index: 2;
+  }
+
+  .table-content {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .left,
+  .middle,
+  .right {
+    text-align: center;
+    display: block; /* Altera os elementos de tabela para se comportarem como blocos */
+    width: 100%; /* Ocupa toda a largura da coluna */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
+  }
+
+  .left,
+  .middle {
+    margin-bottom: 22px;
+  }
+}
